@@ -17,11 +17,11 @@ namespace SinglyLinkedList
     public class SinglyLinkedListNode<T>
     {
         /// <summary>
-        /// Value for current node. It is generic type.
+        /// Gets/Sets value for current node. It is generic type.
         /// </summary>
         public T Value { get; set; }
         /// <summary>
-        /// Reference to the next node.
+        /// Gets/Sets reference to the next node.
         /// </summary>
         public SinglyLinkedListNode<T> Next { get; set; }
         /// <summary>
@@ -48,12 +48,12 @@ namespace SinglyLinkedList
         private int _count;
         
         /// <summary>
-        /// Get current Head property.
+        /// Gets current Head property.
         /// </summary>
         public SinglyLinkedListNode<T> Head { get; private set; }
         
         /// <summary>
-        /// Get current Tail property.
+        /// Gets current Tail property.
         /// </summary>
         public SinglyLinkedListNode<T> Tail { get; private set; }
 
@@ -185,12 +185,12 @@ namespace SinglyLinkedList
         #region ICollection<T>
 
         /// <summary>
-        /// Get current total items in the list.
+        /// Gets current total items in the list.
         /// </summary>
         public int Count => _count;
 
         /// <summary>
-        /// Get whether or not list is read only.
+        /// Gets whether or not list is read only.
         /// </summary>
         public bool IsReadOnly => false;
 

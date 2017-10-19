@@ -18,15 +18,15 @@ namespace DoublyLinkedList
     public class DoublyLinkedListNode<T>
     {
         /// <summary>
-        /// Value for current node. It is generic type.
+        /// Gets/Sets value for current node. It is generic type.
         /// </summary>
         public T Value { get; set; }
         /// <summary>
-        /// Reference to the next node.
+        /// Gets/Sets reference to the next node.
         /// </summary>
         public DoublyLinkedListNode<T> Next { get; set; }
         /// <summary>
-        /// Reference to the previous node.
+        /// Gets/Sets reference to the previous node.
         /// </summary>
         public DoublyLinkedListNode<T> Previous { get; set; }
         /// <summary>
@@ -50,12 +50,12 @@ namespace DoublyLinkedList
     {
         private int _count;
         /// <summary>
-        /// Get current Head property.
+        /// Gets current Head property.
         /// </summary>
         public DoublyLinkedListNode<T> Head { get; private set; }
 
         /// <summary>
-        /// Get current Tail property.
+        /// Gets current Tail property.
         /// </summary>
         public DoublyLinkedListNode<T> Tail { get; private set; }
 
@@ -245,12 +245,12 @@ namespace DoublyLinkedList
         }
         #region ICollection<T>
         /// <summary>
-        /// Get current total items in the list.
+        /// Gets current total items in the list.
         /// </summary>
         public int Count => _count;
 
         /// <summary>
-        /// Get whether or not list is read only.
+        /// Gets whether or not list is read only.
         /// </summary>
         public bool IsReadOnly => false;
 
@@ -345,7 +345,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Get IEnumerator of T for current list.
+        /// Gets IEnumerator of T for current list.
         /// </summary>
         /// <returns>IEnumerator of current generic type.</returns>
         public IEnumerator<T> GetEnumerator()
