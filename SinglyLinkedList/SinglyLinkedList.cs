@@ -56,16 +56,11 @@ namespace SinglyLinkedList
         /// Get current Tail property.
         /// </summary>
         public SinglyLinkedListNode<T> Tail { get; private set; }
-        
-        /// <summary>
-        /// Get current total items in the list.
-        /// </summary>
-        public int Count => _count;
 
         /// <summary>
-        /// Add item to the first position in the list.
+        /// Add an item to the first position in the list.
         /// </summary>
-        /// <param name="node">Node that contains generic type. Must be non-null.</param>
+        /// <param name="node">Node that contains generic value type. Must be non-null.</param>
         /// <exception cref="ArgumentNullException">'node' cannot be null.</exception>
         public void AddFirst(SinglyLinkedListNode<T> node)
         {
@@ -82,7 +77,7 @@ namespace SinglyLinkedList
         }
 
         /// <summary>
-        /// Add item to the first position in the list.
+        /// Add an item to the first position in the list.
         /// </summary>
         /// <param name="value">Item to add.</param>
         public void AddFirst(T value)
@@ -91,9 +86,9 @@ namespace SinglyLinkedList
         }
 
         /// <summary>
-        /// Add item to the last position in the list.
+        /// Add an item to the last position in the list.
         /// </summary>
-        /// <param name="node">Node that contains generic type. Must be non-null.</param>
+        /// <param name="node">Node that contains generic value type. Must be non-null.</param>
         /// <exception cref="ArgumentNullException">'node' cannot be null.</exception>
         public void AddLast(SinglyLinkedListNode<T> node)
         {
@@ -110,7 +105,7 @@ namespace SinglyLinkedList
         }
 
         /// <summary>
-        /// Add item to the last position in the list.
+        /// Add an item to the last position in the list.
         /// </summary>
         /// <param name="value">Item to add.</param>
         public void AddLast(T value)
@@ -119,7 +114,7 @@ namespace SinglyLinkedList
         }
         
         /// <summary>
-        /// Add item to list based on the selected option in AddMode enumeration.
+        /// Add an item to list based on the selected option in AddMode enumeration.
         /// </summary>
         /// <param name="value">Item to add. Generic type.</param>
         /// <param name="addMode">Option to add an item.</param>
@@ -135,16 +130,7 @@ namespace SinglyLinkedList
                     break;
             }
         }
-
-        /// <summary>
-        /// Add item to the last position in the list.
-        /// </summary>
-        /// <param name="value">Item to add.</param>
-        public void Add(T value)
-        {
-            AddLast(new SinglyLinkedListNode<T>(value));
-        }
-
+        
         /// <summary>
         /// Remove the first item in the list.
         /// </summary>
@@ -186,6 +172,22 @@ namespace SinglyLinkedList
             }
             _count--;
         }
+
+        /// <summary>
+        /// Add an item to the last position in the list.
+        /// </summary>
+        /// <param name="value">Item to add.</param>
+        public void Add(T value)
+        {
+            AddLast(new SinglyLinkedListNode<T>(value));
+        }
+
+        #region ICollection<T>
+
+        /// <summary>
+        /// Get current total items in the list.
+        /// </summary>
+        public int Count => _count;
 
         /// <summary>
         /// Get whether or not list is read only.
@@ -244,7 +246,7 @@ namespace SinglyLinkedList
         /// </summary>
         /// <param name="value">Item to remove. Generic type.</param>
         /// <returns>True if an item is removed. Otherwise false.</returns>
-        // <exception cref="InvalidOperationException">List is empty.</exception>
+        /// <exception cref="InvalidOperationException">List is empty.</exception>
         public bool Remove(T value)
         {
             if (_count == 0)
@@ -293,5 +295,6 @@ namespace SinglyLinkedList
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+        #endregion
     }
 }
