@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stack (Array Backing Store)
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack (Array Backing Store)", "Stack (Array Backing Store)\Stack (Array Backing Store).csproj", "{BD5ADEEB-C057-42C1-8394-736D514DB0ED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queues", "Queues", "{7CBC11A8-65D0-4C6A-9441-5806869C4480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue (Array Backing Store)", "Queue (Array Backing Store)\Queue (Array Backing Store).csproj", "{AC947163-C2BB-4B8E-9964-13F27A324441}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,10 @@ Global
 		{BD5ADEEB-C057-42C1-8394-736D514DB0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD5ADEEB-C057-42C1-8394-736D514DB0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD5ADEEB-C057-42C1-8394-736D514DB0ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC947163-C2BB-4B8E-9964-13F27A324441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC947163-C2BB-4B8E-9964-13F27A324441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC947163-C2BB-4B8E-9964-13F27A324441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC947163-C2BB-4B8E-9964-13F27A324441}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +82,8 @@ Global
 		{1A8518D8-DADC-4754-A184-AA650C653486} = {7B0E0AFF-D856-4279-AC37-BA58E15FA59F}
 		{B6EB147B-07C3-434F-8E27-23D4A220D65F} = {72BBBE04-31AE-45D0-B9F0-875D8813FBFD}
 		{BD5ADEEB-C057-42C1-8394-736D514DB0ED} = {B6EB147B-07C3-434F-8E27-23D4A220D65F}
+		{7CBC11A8-65D0-4C6A-9441-5806869C4480} = {D50F85AB-08BD-405D-9A31-755221ED4026}
+		{AC947163-C2BB-4B8E-9964-13F27A324441} = {7CBC11A8-65D0-4C6A-9441-5806869C4480}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7CBD95B-357A-4E79-9157-8009F4232297}

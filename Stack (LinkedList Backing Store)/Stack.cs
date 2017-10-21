@@ -90,10 +90,13 @@ namespace Stack
         /// <param name="array">Target array.</param>
         /// <param name="arrayIndex">Start index of the array.</param>
         /// <exception cref="InvalidOperationException">Stack is empty.</exception>
+        /// <exception cref="IndexOutOfRangeException">Destination array's length is less than stack's count.</exception>
         public void CopyTo(T[] array, int arrayIndex)
         {
             if (_list.Count == 0)
                 throw new InvalidOperationException("Stack is empty!");
+            if (array.Length < _list.Count)
+                throw new IndexOutOfRangeException("Destination array's length is less than stack's count.");
             _list.CopyTo(array, arrayIndex);
         }
 
@@ -108,7 +111,7 @@ namespace Stack
         /// <summary>
         /// Gets IEnumerator of T.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>IEnumerator of T</returns>
         public IEnumerator<T> GetEnumerator()
         {
             return _list.GetEnumerator();

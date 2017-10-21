@@ -1,40 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-
-namespace Stack
+namespace Queue
 {
     /// <summary>
-    /// Stack with Array backing store.
+    /// Queue with Array backing store.
     /// </summary>
     /// <typeparam name="T">Generic type.</typeparam>
-    public class Stack<T> : IEnumerable<T>
+    public class Queue<T> : IEnumerable<T>
     {
         private int _count;
         private T[] _array = new T[0];
 
         /// <summary>
-        /// Initialize stack with default constructor.
+        /// Initialize queue with default constructor.
         /// </summary>
-        public Stack() { }
+        public Queue() { }
 
         /// <summary>
-        /// Initialize stack with collection of items.
+        /// Initialize queue with collection of items.
         /// </summary>
         /// <param name="collection">Items that support IEnumerable of T</param>
-        public Stack(IEnumerable<T> collection)
+        public Queue(IEnumerable<T> collection)
         {
             if (collection != null)
             {
                 foreach (var item in collection)
-                    Push(item);
+                    Enqueue(item);
             }
         }
 
         /// <summary>
-        /// Push (store) item the stack.
+        /// Enqueue (store) item the queue.
         /// </summary>
-        /// <param name="item">Item to push as generic type.</param>
-        public void Push(T item)
+        /// <param name="item">Item to enqueue as generic type.</param>
+        public void Enqueue(T item)
         {
             if (_count == _array.Length)
             {
@@ -53,52 +52,44 @@ namespace Stack
             _array[_count++] = item;
         }
 
-
         /// <summary>
         /// Peek the top level item without removing it.
         /// </summary>
         /// <returns>Top level item.</returns>
-        /// <exception cref="InvalidOperationException">Stack is empty.</exception>
+        /// <exception cref="InvalidOperationException">Queue is empty.</exception>
         public T Peek()
         {
             if (_count == 0)
-                throw new InvalidOperationException("Stack is empty!");
-            return _array[_count - 1];
+                throw new InvalidOperationException("Queue is empty!");
+            return _array[0];
         }
 
-
         /// <summary>
-        /// Pop (remove) top level item from stack.
+        /// Dequeue (remove) top level item from queue.
         /// </summary>
         /// <returns>Top level item being removed.</returns>
-        /// <exception cref="InvalidOperationException">Stack is empty.</exception>
-        public T Pop()
+        /// <exception cref="InvalidOperationException">Queue is empty.</exception>
+        public T Dequeue()
         {
             if (_count == 0)
-                throw new InvalidOperationException("Stack is empty!");
-            T value = _array[_count - 1];
-            _array[_count - 1] = default(T);
+                throw new InvalidOperationException("Queue is empty!");
+            T value = _array[0];
+
+            if (_count == 1)
+            {
+                _array = new T[0];
+            }
+            else
+            {
+                T[] newArray = new T[_array.Length - 1];
+                for (int i = 1; i < _count; i++)
+                {
+                    newArray[i - 1] = _array[i];
+                }
+                _array = newArray;
+            }
             _count--;
             return value;
-        }
-
-
-        /// <summary>
-        /// Check whether or not an item exists in stack.
-        /// </summary>
-        /// <param name="item">Item to check as generic type.</param>
-        /// <returns>True if exists, otherwise false.</returns>
-        /// <exception cref="InvalidOperationException">Stack is empty.</exception>
-        public bool Contains(T item)
-        {
-            if (_count == 0)
-                throw new InvalidOperationException("Stack is empty!");
-            for (int i = _count - 1; i >= 0; i--)
-            {
-                if (_array[i].Equals(item))
-                    return true;
-            }
-            return false;
         }
 
         /// <summary>
@@ -110,34 +101,50 @@ namespace Stack
             _array = new T[0];
         }
 
+        /// <summary>
+        /// Check whether or not an item exists in Queue.
+        /// </summary>
+        /// <param name="item">Item to check as generic type.</param>
+        /// <returns>True if exists, otherwise false.</returns>
+        /// <exception cref="InvalidOperationException">Queue is empty.</exception>
+        public bool Contains(T item)
+        {
+            if (_count == 0)
+                throw new InvalidOperationException("Queue is empty!");
+            for (int i = 0; i < _count; i++)
+            {
+                if (_array[i].Equals(item))
+                    return true;
+            }
+            return false;
+        }
 
         /// <summary>
-        /// Copy all items in stack to an array with start index.
+        /// Copy all items in queue to an array with start index.
         /// </summary>
         /// <param name="array">Target array.</param>
         /// <param name="arrayIndex">Start index of the array.</param>
-        /// <exception cref="InvalidOperationException">Stack is empty.</exception>
-        /// <exception cref="IndexOutOfRangeException">Destination array's length is less than stack's count.</exception>
+        /// <exception cref="InvalidOperationException">Queue is empty.</exception>
+        /// <exception cref="IndexOutOfRangeException">Destination array's length is less than queue's count.</exception>
         public void CopyTo(T[] array, int arrayIndex)
         {
             if (_count == 0)
-                throw new InvalidOperationException("Stack is empty!");
+                throw new InvalidOperationException("Queue is empty!");
             if (array.Length < _count)
-                throw new IndexOutOfRangeException("Destination array's length is less than stack's count.");
-            for (int i = _count - 1; i >= 0; i--)
+                throw new IndexOutOfRangeException("Destination array's length is less than queue's count.");
+            for (int i = 0; i < _count; i++)
             {
                 array[arrayIndex++] = _array[i];
             }
         }
 
         /// <summary>
-        /// Gets the total items in stack.
+        /// Gets the total items in queue.
         /// </summary>
         public int Count
         {
             get { return _count; }
         }
-
 
         /// <summary>
         /// Gets IEnumerator of T.
@@ -145,7 +152,7 @@ namespace Stack
         /// <returns>IEnumerator of T</returns>
         public IEnumerator<T> GetEnumerator()
         {
-            for (int i = _count - 1; i >= 0; i--)
+            for (int i = 0; i < _count; i++)
             {
                 yield return _array[i];
             }
