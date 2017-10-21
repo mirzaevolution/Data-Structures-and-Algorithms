@@ -4,12 +4,14 @@ using System.Collections.Generic;
 namespace Stack
 {
     /// <summary>
-    /// Stack with Linked List backing store.
+    /// Stack with Array backing store.
     /// </summary>
     /// <typeparam name="T">Generic type.</typeparam>
     public class Stack<T> : IEnumerable<T>
     {
-        private LinkedList<T> _list = new LinkedList<T>();
+        private int _count;
+        private T[] _array = new T[0];
+
         /// <summary>
         /// Initialize stack with default constructor.
         /// </summary>
@@ -21,7 +23,7 @@ namespace Stack
         /// <param name="collection">Items that support IEnumerable of T</param>
         public Stack(IEnumerable<T> collection)
         {
-            if (collection!=null)
+            if (collection != null)
             {
                 foreach (var item in collection)
                     Push(item);
@@ -29,13 +31,28 @@ namespace Stack
         }
 
         /// <summary>
-        /// Push (store) item to the stack.
+        /// Push (store) item the stack.
         /// </summary>
         /// <param name="item">Item to push as generic type.</param>
         public void Push(T item)
         {
-            _list.AddFirst(item);
+            if (_count == _array.Length)
+            {
+                int newLength = _count == 0 ? 4 : _count * 2;
+                if (_count == 0)
+                {
+                    _array = new T[newLength];
+                }
+                else
+                {
+                    T[] newArray = new T[newLength];
+                    _array.CopyTo(newArray, 0);
+                    _array = newArray;
+                }
+            }
+            _array[_count++] = item;
         }
+
 
         /// <summary>
         /// Peek the top level item without removing it.
@@ -44,10 +61,11 @@ namespace Stack
         /// <exception cref="InvalidOperationException">Stack is empty.</exception>
         public T Peek()
         {
-            if (_list.Count == 0)
+            if (_count == 0)
                 throw new InvalidOperationException("Stack is empty!");
-            return _list.First.Value;
+            return _array[_count - 1];
         }
+
 
         /// <summary>
         /// Pop (remove) top level item from stack.
@@ -56,12 +74,14 @@ namespace Stack
         /// <exception cref="InvalidOperationException">Stack is empty.</exception>
         public T Pop()
         {
-            if (_list.Count == 0)
+            if (_count == 0)
                 throw new InvalidOperationException("Stack is empty!");
-            T value = _list.First.Value;
-            _list.RemoveFirst();
+            T value = _array[_count - 1];
+            _array[_count - 1] = default(T);
+            _count--;
             return value;
         }
+
 
         /// <summary>
         /// Check whether or not an item exists in stack.
@@ -71,9 +91,14 @@ namespace Stack
         /// <exception cref="InvalidOperationException">Stack is empty.</exception>
         public bool Contains(T item)
         {
-            if (_list.Count == 0)
+            if (_count == 0)
                 throw new InvalidOperationException("Stack is empty!");
-            return _list.Contains(item);
+            for (int i = _count - 1; i >= 0; i--)
+            {
+                if (_array[i].Equals(item))
+                    return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -81,8 +106,10 @@ namespace Stack
         /// </summary>
         public void Clear()
         {
-            _list.Clear();
+            _count = 0;
+            _array = new T[0];
         }
+
 
         /// <summary>
         /// Copy all items in stack to an array with start index.
@@ -92,9 +119,12 @@ namespace Stack
         /// <exception cref="InvalidOperationException">Stack is empty.</exception>
         public void CopyTo(T[] array, int arrayIndex)
         {
-            if (_list.Count == 0)
+            if (_count == 0)
                 throw new InvalidOperationException("Stack is empty!");
-            _list.CopyTo(array, arrayIndex);
+            for (int i = _count - 1; i >= 0; i--)
+            {
+                array[arrayIndex++] = _array[i];
+            }
         }
 
         /// <summary>
@@ -102,16 +132,20 @@ namespace Stack
         /// </summary>
         public int Count
         {
-            get { return _list.Count; }
+            get { return _count; }
         }
 
+        
         /// <summary>
         /// Gets IEnumerator of T.
         /// </summary>
         /// <returns></returns>
         public IEnumerator<T> GetEnumerator()
         {
-            return _list.GetEnumerator();
+            for (int i = _count - 1; i >= 0; i--)
+            {
+                yield return _array[i];
+            }
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
