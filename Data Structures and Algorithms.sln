@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stacks", "Stacks", "{72BBBE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stack (LinkedList Backing Store)", "Stack (LinkedList Backing Store)", "{7B0E0AFF-D856-4279-AC37-BA58E15FA59F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "Stack\Stack.csproj", "{EA4D50BA-2FD9-4611-9FA4-ED538563D4ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack (LinkedList Backing Store)", "Stack\Stack (LinkedList Backing Store).csproj", "{EA4D50BA-2FD9-4611-9FA4-ED538563D4ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
