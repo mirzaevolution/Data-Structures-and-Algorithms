@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Stack")]
+[assembly: AssemblyTitle("Stack (LinkedList Backing Store)")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Stack")]
+[assembly: AssemblyProduct("Stack (LinkedList Backing Store)")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ea4d50ba-2fd9-4611-9fa4-ed538563d4ed")]
+[assembly: Guid("1a8518d8-dadc-4754-a184-aa650c653486")]
 
 // Version information for an assembly consists of the following four values:
 //

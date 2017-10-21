@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Stack
 {
@@ -36,7 +38,7 @@ namespace Stack
         public void Push(T item)
         {
             _list.AddFirst(item);
-        } 
+        }
 
         /// <summary>
         /// Peek the top level item without removing it.
