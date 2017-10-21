@@ -8,13 +8,15 @@ namespace Queue
     /// <typeparam name="T">Generic type.</typeparam>
     public class Queue<T> : IEnumerable<T>
     {
-        private int _count;
+        private int _count = 0;
         private T[] _array = new T[0];
-
+        private int _head = 0;
+        private int _tail = -1;
         /// <summary>
         /// Initialize queue with default constructor.
         /// </summary>
-        public Queue() { }
+        public Queue()
+        { }
 
         /// <summary>
         /// Initialize queue with collection of items.
@@ -37,19 +39,28 @@ namespace Queue
         {
             if (_count == _array.Length)
             {
-                int newLength = _count == 0 ? 4 : _count * 2;
+                int newSize = _count == 0 ? 3 : _count * 2;
                 if (_count == 0)
-                {
-                    _array = new T[newLength];
-                }
+                    _array = new T[newSize];
                 else
                 {
-                    T[] newArray = new T[newLength];
-                    _array.CopyTo(newArray, 0);
+                    T[] newArray = new T[newSize];
+                    int index = 0;
+                    int pointer = _head;
+                    while (index < _count)
+                    {
+                        newArray[index] = _array[pointer];
+                        pointer = (pointer + 1) % _array.Length;
+                        index++;
+                    }
+                    _head = 0;
+                    _tail = _count - 1;
                     _array = newArray;
                 }
             }
-            _array[_count++] = item;
+            _tail = (_tail + 1) % _array.Length;
+            _array[_tail] = item;
+            _count++;
         }
 
         /// <summary>
@@ -61,7 +72,7 @@ namespace Queue
         {
             if (_count == 0)
                 throw new InvalidOperationException("Queue is empty!");
-            return _array[0];
+            return _array[_head];
         }
 
         /// <summary>
@@ -73,32 +84,11 @@ namespace Queue
         {
             if (_count == 0)
                 throw new InvalidOperationException("Queue is empty!");
-            T value = _array[0];
-
-            if (_count == 1)
-            {
-                _array = new T[0];
-            }
-            else
-            {
-                T[] newArray = new T[_array.Length - 1];
-                for (int i = 1; i < _count; i++)
-                {
-                    newArray[i - 1] = _array[i];
-                }
-                _array = newArray;
-            }
+            T item = _array[_head];
+            _array[_head] = default(T);
+            _head = (_head + 1) % _array.Length;
             _count--;
-            return value;
-        }
-
-        /// <summary>
-        /// Clear all items.
-        /// </summary>
-        public void Clear()
-        {
-            _count = 0;
-            _array = new T[0];
+            return item;
         }
 
         /// <summary>
@@ -111,10 +101,14 @@ namespace Queue
         {
             if (_count == 0)
                 throw new InvalidOperationException("Queue is empty!");
-            for (int i = 0; i < _count; i++)
+            int iterator = 0;
+            int pointer = _head;
+            while (iterator < _count)
             {
-                if (_array[i].Equals(item))
+                if (_array[pointer].Equals(item))
                     return true;
+                pointer = (pointer + 1) % _array.Length;
+                iterator++;
             }
             return false;
         }
@@ -132,19 +126,32 @@ namespace Queue
                 throw new InvalidOperationException("Queue is empty!");
             if (array.Length < _count)
                 throw new IndexOutOfRangeException("Destination array's length is less than queue's count.");
-            for (int i = 0; i < _count; i++)
+            int iterator = 0;
+            int pointer = _head;
+            while (iterator < _count)
             {
-                array[arrayIndex++] = _array[i];
+                array[arrayIndex++] = _array[pointer];
+                pointer = (pointer + 1) % _array.Length;
+                iterator++;
             }
+        }
+
+
+        /// <summary>
+        /// Clear all items.
+        /// </summary>
+        public void Clear()
+        {
+            _count = 0;
+            _array = new T[0];
+            _head = 0;
+            _tail = -1;
         }
 
         /// <summary>
         /// Gets the total items in queue.
         /// </summary>
-        public int Count
-        {
-            get { return _count; }
-        }
+        public int Count { get { return _count; } }
 
         /// <summary>
         /// Gets IEnumerator of T.
@@ -152,9 +159,13 @@ namespace Queue
         /// <returns>IEnumerator of T</returns>
         public IEnumerator<T> GetEnumerator()
         {
-            for (int i = 0; i < _count; i++)
+            int iterator = 0;
+            int pointer = _head;
+            while (iterator < _count)
             {
-                yield return _array[i];
+                yield return _array[pointer];
+                pointer = (pointer + 1) % _array.Length;
+                iterator++;
             }
         }
 
@@ -162,5 +173,6 @@ namespace Queue
         {
             return GetEnumerator();
         }
+
     }
 }
