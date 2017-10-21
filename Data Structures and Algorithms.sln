@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queues", "Queues", "{7CBC11
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue (Array Backing Store)", "Queue (Array Backing Store)\Queue (Array Backing Store).csproj", "{AC947163-C2BB-4B8E-9964-13F27A324441}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue (LinkedList Backing Store)", "Queue (LinkedList Backing Store)\Queue (LinkedList Backing Store).csproj", "{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{AC947163-C2BB-4B8E-9964-13F27A324441}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC947163-C2BB-4B8E-9964-13F27A324441}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC947163-C2BB-4B8E-9964-13F27A324441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{BD5ADEEB-C057-42C1-8394-736D514DB0ED} = {B6EB147B-07C3-434F-8E27-23D4A220D65F}
 		{7CBC11A8-65D0-4C6A-9441-5806869C4480} = {D50F85AB-08BD-405D-9A31-755221ED4026}
 		{AC947163-C2BB-4B8E-9964-13F27A324441} = {7CBC11A8-65D0-4C6A-9441-5806869C4480}
+		{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2} = {7CBC11A8-65D0-4C6A-9441-5806869C4480}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7CBD95B-357A-4E79-9157-8009F4232297}
