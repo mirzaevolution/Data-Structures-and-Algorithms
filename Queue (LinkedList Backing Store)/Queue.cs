@@ -37,7 +37,6 @@ namespace Queue
         {
             _list.AddLast(item);
         }
-
         /// <summary>
         /// Peek the top level item without removing it.
         /// </summary>
@@ -47,7 +46,7 @@ namespace Queue
         {
             if (_list.Count == 0)
                 throw new InvalidOperationException("Queue is empty!");
-            return _list.Last.Value;
+            return _list.First.Value;
         }
 
         /// <summary>
@@ -59,8 +58,8 @@ namespace Queue
         {
             if (_list.Count == 0)
                 throw new InvalidOperationException("Queue is empty!");
-            T value = _list.Last.Value;
-            _list.RemoveLast();
+            T value = _list.First.Value;
+            _list.RemoveFirst();
             return value;
         }
 
