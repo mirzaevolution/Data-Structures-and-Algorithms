@@ -6,7 +6,7 @@
  * IComparable<T> interface. Supports 6 different ways of traversal.
  * 
  * January 21, 2015
- * Originaly created by: Mirza Ghulam Rasyid.
+ * Originally created by: Mirza Ghulam Rasyid.
  * First Uploaded to Github: October 23, 2017.
  * Please report if you find any bug within the code. :)
  * 
