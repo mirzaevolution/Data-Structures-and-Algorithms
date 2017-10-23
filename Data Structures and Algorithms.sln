@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue (Array Backing Store)
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue (LinkedList Backing Store)", "Queue (LinkedList Backing Store)\Queue (LinkedList Backing Store).csproj", "{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Advanced Binary Search Tree", "Advanced Binary Search Tree", "{42DF947C-2449-4140-A9AB-69B119CB665B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearchTree", "BinarySearchTree\BinarySearchTree.csproj", "{95B3D528-D108-4867-81B5-E158846E3156}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,10 @@ Global
 		{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B3D528-D108-4867-81B5-E158846E3156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B3D528-D108-4867-81B5-E158846E3156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B3D528-D108-4867-81B5-E158846E3156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B3D528-D108-4867-81B5-E158846E3156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +99,8 @@ Global
 		{7CBC11A8-65D0-4C6A-9441-5806869C4480} = {D50F85AB-08BD-405D-9A31-755221ED4026}
 		{AC947163-C2BB-4B8E-9964-13F27A324441} = {7CBC11A8-65D0-4C6A-9441-5806869C4480}
 		{89BF6314-D9A8-4A34-BCCB-C56A904ED2A2} = {7CBC11A8-65D0-4C6A-9441-5806869C4480}
+		{42DF947C-2449-4140-A9AB-69B119CB665B} = {D50F85AB-08BD-405D-9A31-755221ED4026}
+		{95B3D528-D108-4867-81B5-E158846E3156} = {42DF947C-2449-4140-A9AB-69B119CB665B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7CBD95B-357A-4E79-9157-8009F4232297}
