@@ -12,12 +12,12 @@ namespace Queue
         private LinkedList<T> _list = new LinkedList<T>();
 
         /// <summary>
-        /// Initialize queue with default constructor.
+        /// Initializes queue with default constructor.
         /// </summary>
         public Queue() { }
 
         /// <summary>
-        /// Initialize queue with collection of items.
+        /// Initializes queue with collection of items.
         /// </summary>
         /// <param name="collection">Items that support IEnumerable of T</param>
         public Queue(IEnumerable<T> collection)
@@ -30,7 +30,7 @@ namespace Queue
         }
 
         /// <summary>
-        /// Enqueue (store) item the queue.
+        /// Enqueues (store) item the queue.
         /// </summary>
         /// <param name="item">Item to enqueue as generic type.</param>
         public void Enqueue(T item)
@@ -38,7 +38,7 @@ namespace Queue
             _list.AddLast(item);
         }
         /// <summary>
-        /// Peek the top level item without removing it.
+        /// Peeks the top level item without removing it.
         /// </summary>
         /// <returns>Top level item.</returns>
         /// <exception cref="InvalidOperationException">Queue is empty.</exception>
@@ -50,7 +50,7 @@ namespace Queue
         }
 
         /// <summary>
-        /// Dequeue (remove) top level item from queue.
+        /// Dequeues (remove) top level item from queue.
         /// </summary>
         /// <returns>Top level item being removed.</returns>
         /// <exception cref="InvalidOperationException">Queue is empty.</exception>
@@ -64,7 +64,7 @@ namespace Queue
         }
 
         /// <summary>
-        /// Clear all items.
+        /// Clears all items.
         /// </summary>
         public void Clear()
         {
@@ -72,7 +72,7 @@ namespace Queue
         }
 
         /// <summary>
-        /// Check whether or not an item exists in Queue.
+        /// Checks whether or not an item exists in Queue.
         /// </summary>
         /// <param name="item">Item to check as generic type.</param>
         /// <returns>True if exists, otherwise false.</returns>
@@ -85,7 +85,7 @@ namespace Queue
         }
 
         /// <summary>
-        /// Copy all items in queue to an array with start index.
+        /// Copies all items in queue to an array with start index.
         /// </summary>
         /// <param name="array">Target array.</param>
         /// <param name="arrayIndex">Start index of the array.</param>

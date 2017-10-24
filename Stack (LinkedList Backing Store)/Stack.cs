@@ -11,12 +11,12 @@ namespace Stack
     {
         private LinkedList<T> _list = new LinkedList<T>();
         /// <summary>
-        /// Initialize stack with default constructor.
+        /// Initializes stack with default constructor.
         /// </summary>
         public Stack() { }
 
         /// <summary>
-        /// Initialize stack with collection of items.
+        /// Initializes stack with collection of items.
         /// </summary>
         /// <param name="collection">Items that support IEnumerable of T</param>
         public Stack(IEnumerable<T> collection)
@@ -29,7 +29,7 @@ namespace Stack
         }
 
         /// <summary>
-        /// Push (store) item to the stack.
+        /// Pushes (store) item to the stack.
         /// </summary>
         /// <param name="item">Item to push as generic type.</param>
         public void Push(T item)
@@ -38,7 +38,7 @@ namespace Stack
         }
 
         /// <summary>
-        /// Peek the top level item without removing it.
+        /// Peeks the top level item without removing it.
         /// </summary>
         /// <returns>Top level item.</returns>
         /// <exception cref="InvalidOperationException">Stack is empty.</exception>
@@ -50,7 +50,7 @@ namespace Stack
         }
 
         /// <summary>
-        /// Pop (remove) top level item from stack.
+        /// Pops (remove) top level item from stack.
         /// </summary>
         /// <returns>Top level item being removed.</returns>
         /// <exception cref="InvalidOperationException">Stack is empty.</exception>
@@ -64,7 +64,7 @@ namespace Stack
         }
 
         /// <summary>
-        /// Check whether or not an item exists in stack.
+        /// Checks whether or not an item exists in stack.
         /// </summary>
         /// <param name="item">Item to check as generic type.</param>
         /// <returns>True if exists, otherwise false.</returns>
@@ -77,7 +77,7 @@ namespace Stack
         }
 
         /// <summary>
-        /// Clear all items.
+        /// Clears all items.
         /// </summary>
         public void Clear()
         {
@@ -85,7 +85,7 @@ namespace Stack
         }
 
         /// <summary>
-        /// Copy all items in stack to an array with start index.
+        /// Copies all items in stack to an array with start index.
         /// </summary>
         /// <param name="array">Target array.</param>
         /// <param name="arrayIndex">Start index of the array.</param>
