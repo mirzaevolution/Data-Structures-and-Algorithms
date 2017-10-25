@@ -1,7 +1,6 @@
 ﻿using System;
 namespace SelectionSort
 {
-
     /// <summary>
     /// Class that holds extension method for performing Selection Sort operation.
     /// </summary>
