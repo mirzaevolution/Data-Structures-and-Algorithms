@@ -60,7 +60,7 @@ namespace DoublyLinkedList
         public DoublyLinkedListNode<T> Tail { get; private set; }
 
         /// <summary>
-        /// Add an item to the first position in the list.
+        /// Adds an item to the first position in the list.
         /// </summary>
         /// <param name="node">Node that contains generic value type. Must be non-null</param>
         public void AddFirst(DoublyLinkedListNode<T> node)
@@ -79,7 +79,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Add an item to the first position in the list.
+        /// Adds an item to the first position in the list.
         /// </summary>
         /// <param name="value">Item to add.</param>
         public void AddFirst(T value)
@@ -89,7 +89,7 @@ namespace DoublyLinkedList
 
 
         /// <summary>
-        /// Add an item to the last position in the list.
+        /// Adds an item to the last position in the list.
         /// </summary>
         /// <param name="node">Node that contains generic value type. Must be non-null</param>
         public void AddLast(DoublyLinkedListNode<T> node)
@@ -108,7 +108,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Add an item to the last position in the list.
+        /// Adds an item to the last position in the list.
         /// </summary>
         /// <param name="value">Item to add.</param>
         public void AddLast(T value)
@@ -117,7 +117,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Add an item after selected node. Selected node cannot be null.
+        /// Adds an item after selected node. Selected node cannot be null.
         /// </summary>
         /// <param name="node">Selected node.</param>
         /// <param name="valueToAdd">Item to add.</param>
@@ -144,7 +144,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Add an item before selected node. Selected node cannot be null.
+        /// Adds an item before selected node. Selected node cannot be null.
         /// </summary>
         /// <param name="node">Selected node.</param>
         /// <param name="valueToAdd">Item to add.</param>
@@ -171,7 +171,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Add an item to list based on the selected option in AddMode enumeration.
+        /// Adds an item to list based on the selected option in AddMode enumeration.
         /// </summary>
         /// <param name="value">Item to add. Generic type.</param>
         /// <param name="addMode">Option to add an item.</param>
@@ -189,7 +189,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Remove the first item in the list.
+        /// Removes the first item in the list.
         /// </summary>
         /// <exception cref="InvalidOperationException">List is empty.</exception>
         public void RemoveFirst()
@@ -208,7 +208,7 @@ namespace DoublyLinkedList
 
 
         /// <summary>
-        /// Remove the last item in the list.
+        /// Removes the last item in the list.
         /// </summary>
         /// <exception cref="InvalidOperationException">List is empty.</exception>
         public void RemoveLast()
@@ -226,7 +226,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Find a node in the list.
+        /// Finds a node in the list.
         /// </summary>
         /// <param name="value">Item to find.</param>
         /// <returns>Found node. Null if it is not found.</returns>
@@ -255,7 +255,7 @@ namespace DoublyLinkedList
         public bool IsReadOnly => false;
 
         /// <summary>
-        /// Add an item to the last position in the list.
+        /// Adds an item to the last position in the list.
         /// </summary>
         /// <param name="value">Item to add.</param>
         public void Add(T value)
@@ -264,7 +264,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Remove an item from the list.
+        /// Removes an item from the list.
         /// </summary>
         /// <param name="value">Item to remove. Generic type.</param>
         /// <returns>True if an item is removed. Otherwise false.</returns>
@@ -305,7 +305,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Clear the items in the list.
+        /// Clears the items in the list.
         /// </summary>
         public void Clear()
         {
@@ -314,7 +314,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Check whether or not an item exists in the list.
+        /// Checks whether or not an item exists in the list.
         /// </summary>
         /// <param name="value">Item to check. Generic type.</param>
         /// <returns>True if found. Otherwise false.</returns>
@@ -327,7 +327,7 @@ namespace DoublyLinkedList
         }
 
         /// <summary>
-        /// Copy items in the list to array.
+        /// Copies items in the list to array.
         /// </summary>
         /// <param name="array">Array to be copied to.</param>
         /// <param name="arrayIndex">Array start index.</param>

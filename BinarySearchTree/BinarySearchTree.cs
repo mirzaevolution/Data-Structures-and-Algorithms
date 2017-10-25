@@ -38,11 +38,11 @@ namespace BinarySearchTree
         /// </summary>
         public BinarySearchTreeNode<T> Right { get; set; }
         /// <summary>
-        /// Initialize default constructor.
+        /// Initializes default constructor.
         /// </summary>
         public BinarySearchTreeNode() { }
         /// <summary>
-        /// Initialize secondary constructor with parameter.
+        /// Initializes secondary constructor with parameter.
         /// </summary>
         /// <param name="value">Value that implements IComparable of T.</param>
         public BinarySearchTreeNode(T value) { Value = value; }
@@ -76,12 +76,12 @@ namespace BinarySearchTree
         public int Count { get { return _count; } }
 
         /// <summary>
-        /// Initialize default constructor.
+        /// Initializes default constructor.
         /// </summary>
         public BinarySearchTree() { }
 
         /// <summary>
-        /// Initialize secondary constructor with collection.
+        /// Initializes secondary constructor with collection.
         /// </summary>
         /// <param name="collection">A collection that will be added to tree.</param>
         public BinarySearchTree(IEnumerable<T> collection)
@@ -94,7 +94,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Add new node to tree by specifying its value.
+        /// Adds new node to tree by specifying its value.
         /// </summary>
         /// <param name="value">Any generic type that implements IComparable of T interface.</param>
         public void Add(T value)
@@ -109,7 +109,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Find a node by specifying its value.
+        /// Finds a node by specifying its value.
         /// </summary>
         /// <param name="value">Any generic type that implements IComparable of T interface.</param>
         /// <returns>Found node. Null if it's not found.</returns>
@@ -123,7 +123,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Remove a node by specifying its value.
+        /// Removes a node by specifying its value.
         /// </summary>
         /// <param name="value">Any generic type that implements IComparable of T interface.</param>
         /// <returns>True if deleted. Otherwise false.</returns>
@@ -216,7 +216,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Traverse tree in pre-order manner.
+        /// Traverses tree in pre-order manner.
         /// </summary>
         /// <param name="action">An action to take while traversing the tree.</param>
         /// <param name="parent">Parent in which traversal will be started from.</param>
@@ -237,7 +237,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Traverse tree in in-order manner.
+        /// Traverses tree in in-order manner.
         /// </summary>
         /// <param name="action">An action to take while traversing the tree.</param>
         /// <param name="parent">Parent in which traversal will be started from.</param>
@@ -258,7 +258,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Traverse tree in post-order manner.
+        /// Traverses tree in post-order manner.
         /// </summary>
         /// <param name="action">An action to take while traversing the tree.</param>
         /// <param name="parent">Parent in which traversal will be started from.</param>
@@ -279,7 +279,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Traverse tree in inverse-pre-order manner.
+        /// Traverses tree in inverse-pre-order manner.
         /// </summary>
         /// <param name="action">An action to take while traversing the tree.</param>
         /// <param name="parent">Parent in which traversal will be started from.</param>
@@ -300,7 +300,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Traverse tree in inverse-in-order manner.
+        /// Traverses tree in inverse-in-order manner.
         /// </summary>
         /// <param name="action">An action to take while traversing the tree.</param>
         /// <param name="parent">Parent in which traversal will be started from.</param>
@@ -321,7 +321,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Traverse tree in inverse-post-order manner.
+        /// Traverses tree in inverse-post-order manner.
         /// </summary>
         /// <param name="action">An action to take while traversing the tree.</param>
         /// <param name="parent">Parent in which traversal will be started from.</param>
@@ -342,7 +342,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Check whether or not a node exists in tree by specifying its value.
+        /// Checks whether or not a node exists in tree by specifying its value.
         /// </summary>
         /// <param name="value">Any generic type that implements IComparable of T interface.</param>
         /// <returns>True if exists. Otherwise false.</returns>
@@ -355,7 +355,7 @@ namespace BinarySearchTree
         }
 
         /// <summary>
-        /// Clear all nodes in tree.
+        /// Clears all nodes in tree.
         /// </summary>
         public void Clear()
         {
@@ -467,7 +467,7 @@ namespace BinarySearchTree
 
         #region IEnumerable<T>
         /// <summary>
-        /// Get IEnumerator for this tree.
+        /// Gets IEnumerator for this tree.
         /// </summary>
         /// <returns>IEnumerator of T where T is data type for this tree that implements IComparable of T.</returns>
         public IEnumerator<T> GetEnumerator()

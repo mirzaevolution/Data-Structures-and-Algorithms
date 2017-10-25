@@ -86,7 +86,7 @@ namespace SortedLinkedList
         public LinkedListNode<T> Tail { get; private set; }
 
         /// <summary>
-        /// Add new node to linked list.
+        /// Adds new node to linked list.
         /// </summary>
         /// <param name="node">New node. Must be non-null.</param>
         /// <exception cref="ArgumentNullException">'node' cannot be null.</exception>
@@ -129,7 +129,7 @@ namespace SortedLinkedList
 
         }
         /// <summary>
-        /// Remove the first item in the list.
+        /// Removes the first item in the list.
         /// </summary>
         /// <exception cref="InvalidOperationException">List is empty.</exception>
         public void RemoveFirst()
@@ -147,7 +147,7 @@ namespace SortedLinkedList
         }
 
         /// <summary>
-        /// Remove the last item in the list.
+        /// Removes the last item in the list.
         /// </summary>
         /// <exception cref="InvalidOperationException">List is empty.</exception>
         public void RemoveLast()
@@ -186,7 +186,7 @@ namespace SortedLinkedList
         }
 
         /// <summary>
-        /// Clear the items in the list.
+        /// Clears the items in the list.
         /// </summary>
         public void Clear()
         {
@@ -195,7 +195,7 @@ namespace SortedLinkedList
         }
 
         /// <summary>
-        /// Check whether or not an item exists in the list.
+        /// Checks whether or not an item exists in the list.
         /// </summary>
         /// <param name="value">Item to check. Generic type.</param>
         /// <returns>True if found. Otherwise false.</returns>
@@ -215,7 +215,7 @@ namespace SortedLinkedList
         }
 
         /// <summary>
-        /// Copy items in the list to array.
+        /// Copies items in the list to array.
         /// </summary>
         /// <param name="array">Array to be copied to.</param>
         /// <param name="arrayIndex">Array start index.</param>
@@ -233,7 +233,7 @@ namespace SortedLinkedList
         }
 
         /// <summary>
-        /// Remove an item from the list.
+        /// Removes an item from the list.
         /// </summary>
         /// <param name="value">Item to remove. Generic type.</param>
         /// <returns>True if an item is removed. Otherwise false.</returns>
