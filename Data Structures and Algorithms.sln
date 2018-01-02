@@ -75,6 +75,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hexadecimal", "Hexadecimal"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexadecimalConverter", "HexadecimalConverter\HexadecimalConverter.csproj", "{0F589193-D8C7-45EE-A012-8225435B2C62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectSearchPrimeFactorization", "DirectSearchPrimeFactorization\DirectSearchPrimeFactorization.csproj", "{B5D3CB6B-F428-46EF-8FA3-35B77A1C4E40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{0F589193-D8C7-45EE-A012-8225435B2C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F589193-D8C7-45EE-A012-8225435B2C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F589193-D8C7-45EE-A012-8225435B2C62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5D3CB6B-F428-46EF-8FA3-35B77A1C4E40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D3CB6B-F428-46EF-8FA3-35B77A1C4E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D3CB6B-F428-46EF-8FA3-35B77A1C4E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D3CB6B-F428-46EF-8FA3-35B77A1C4E40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -192,6 +198,7 @@ Global
 		{5D37CA6A-48B0-4768-A3B2-A8FD78F0C4D8} = {811D0497-DBFA-455C-B6E2-68D38DF898FD}
 		{348AE8FE-64EE-44B9-BAD9-745E8D52C2D1} = {E90373F6-93AC-4A6B-A0E4-41FC285D6D36}
 		{0F589193-D8C7-45EE-A012-8225435B2C62} = {348AE8FE-64EE-44B9-BAD9-745E8D52C2D1}
+		{B5D3CB6B-F428-46EF-8FA3-35B77A1C4E40} = {4614D397-3934-4668-9D99-8E13667F9B62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7CBD95B-357A-4E79-9157-8009F4232297}
